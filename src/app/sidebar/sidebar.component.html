@@ -1,0 +1,40 @@
+<div class="d-flex flex-column">
+  <div
+    class="accordion rounded"
+    id="accordionPanelsStayOpenExample"
+    style="
+      width: 280px;
+      height: 100vh;
+      padding: 20px;
+      background-color: #142749;
+    "
+  >
+    <p class="text-light">SUPRIMENTOS</p>
+    <div class="accordion-item rounded">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button
+          class="accordion-button text-primary"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne"
+        >
+          Contratos
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseOne"
+        class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne"
+      >
+        <div class="d-flex flex-column list-group">
+          <a class="btn btn-light" role="button" data-bs-toggle="button"
+            routerLink="/registros">
+            Cadastrar</a
+          >
+          <a class="btn btn-light" role="button" data-bs-toggle="button" aria-pressed="true" routerLink="/listar">Listar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+{
+  "registros": [
+    {
+      "id": 1,
+      "numero": "1",
+      "prestador": "teste",
+      "valor": 213,
+      "inicio": "21/12/2002",
+      "fim": "21/12/2003"
+    },
+    {
+      "numero": "22123",
+      "prestador": "dasd",
+      "valor": 5,
+      "inicio": "2021-11-29",
+      "fim": "2021-12-21",
+      "id": 2
+    },
+    {
+      "numero": "3",
+      "prestador": "claudemir",
+      "valor": 7,
+      "inicio": "2312-03-21",
+      "fim": "2412-03-21",
+      "id": 3
+    },
+    {
+      "numero": "4",
+      "prestador": "testeCloseModalOnSaving",
+      "valor": 342,
+      "inicio": "2002-11-09",
+      "fim": "2021-11-09",
+      "id": 4
+    },
+    {
+      "numero": "5",
+      "prestador": "claudemir2",
+      "valor": 32,
+      "inicio": "2212-12-12",
+      "fim": "2222-12-12",
+      "id": 5
+    }
+  ]
+}

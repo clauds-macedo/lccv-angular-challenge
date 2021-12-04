@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="itens.component.css">
+<div class="d-flex flex-column p-3" style="width: 78vw; height: 70px;">
+    <div class="d-flex flex-row links justify-content-between mb-3" style="width: 300px">
+        <!-- links -->
+        <a href="#"> Inicio </a>
+        <a> / </a>
+        <a href="index.html"> Contratos </a>
+        <a> / </a>
+        <a> Cadastrar</a>
+      </div>
+
+      <div class="d-flex flex-column" style="width: 100%;">
+          
+        <div class="card">
+          <div class="card-header">
+            Cadastro de contato
+        </div>
+        <!-- tabs -->
+        
+      </div>
+
+    </div>
+
+    <!-- tables -->
+    
+    <div class="p-3">
+        <ul class="nav nav-tabs mt-1 mb-2">
+            <li class="nav-item">
+              <a class="nav-link text-primary" aria-current="page" [routerLink]="['/registros']">Geral</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn active" [routerLink]="['/registros', 'itens']">Itens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn text-primary" [routerLink]="['/registros', 'projetos']">Projetos</a>
+            </li>
+          </ul>
+        <div class="card-header d-flex flex-row justify-content-between">
+            <h5>Itens</h5>
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                <i class="bi bi-plus"
+                style="font-style: normal;">+</i>
+            </button>
+            
+        </div>
+        <table class="table">
+            <thead>
+              <tr class="border">
+                <th scope="col">#</th>
+                <th scope="col">Serviço</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor unitário</th>
+                <th scope="col">Valor total</th>
+                <th scope="col">Itens</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of registros; let i=index;">
+                    <!-- <td>{{ r.id }}</td>
+                    <td>{{ r.service }}</td>
+                    <td>{{ r.quant }}</td>
+                    <td>{{ r.unitValue  }}</td>
+                    <td>{{ r.totalValue }}</td> -->
+                    <td><img src="../../../../../assets/search-interface-symbol.png" alt=""
+                    style="cursor: pointer; width: 20px"></td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-lg">
+                <form [formGroup]="inputControl">
+                    <div class="form-row">
+                      <div class="col">
+                        <h6>Prestador (razão social)</h6>
+                        <input type="text" class="form-control" formControlName='prestador'>
+                      </div>
+                      <div class="col">
+                        <h6>Ordem</h6>
+                        <input type="text" class="form-control" formControlName='ordem'>
+                      </div>
+                      <div class="col">
+                        <h6>Item ordem</h6>
+                        <input type="text" class="form-control" formControlName='itemOrdem'>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary"
+              (click)="onSubmit()">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>

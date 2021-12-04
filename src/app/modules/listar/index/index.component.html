@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="index.component.css">
+<div class="d-flex flex-column p-3" style="width: 78vw; height: 70px;">
+    <div class="d-flex flex-row links justify-content-between mb-3" style="width: 172px">
+        <!-- links -->
+        <a href="#"> Inicio </a>
+        <a> / </a>
+        <a> Contratos </a>
+      </div>
+
+      <div class="d-flex flex-column" style="width: 100%;">
+          
+        <div class="card d-flex flex-row justify-content-between">
+          <div class="card-header">
+            Contratos
+        </div>
+        <!-- tabs -->
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+            <i class="bi bi-plus"
+            style="font-style: normal;">+</i>
+        </button>
+      </div>
+      <!-- tables -->
+    
+    <div class="p-3">
+        <table class="table">
+            <thead>
+              <tr class="border">
+                <th scope="col">Número</th>
+                <th scope="col">Prestador</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Início</th>
+                <th scope="col">Término</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of registros; let i=index;  ">
+                    <td> {{ r.numero }} </td>
+                    <td> {{ r.prestador }} </td>
+                    <td> {{ r.valor }} </td>
+                    <td> {{ r.inicio  }} </td>
+                    <td> {{ r.fim }} </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adicionar Item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body modal-xl">
+                <form [formGroup]='inputControl'>
+                    <div class="row g-3">
+                                    
+                        <div class="col">
+                            <label for="addNum" class="form-label">Número</label>
+                            <input type="text" class="form-control" id="addNum"
+                            formControlName='numero'>
+                        </div>
+                        <div class="col">
+                            <label for="addPrestador" class="form-label">Prestador</label>
+                            <input type="text" class="form-control" id="addPrestador"
+                            formControlName='prestador'>
+                        </div>
+                        <div class="col">
+                            <label for="contratoValor" class="form-label">Valor</label>
+                            <input type="number" class="form-control" id="contratoValor"
+                            formControlName='valor'>
+                        </div>
+                        <div class="col">
+                            <label for="contratoInicio" class="form-label">Início</label>
+                            <input type="date" class="form-control" id="contratoInicio" placeholder=""
+                            formControlName='inicio'>
+                        </div>
+                        <div class="col">
+                            <label for="contratoTermino" class="form-label">Término</label>
+                            <input type="date" class="form-control" id="contratoTermino" placeholder=""
+                            formControlName='fim'>
+                        </div>
+                    </div>
+            
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"
+              (click)="onSubmit()"
+              [disabled]="!inputControl.valid">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+    </div>
+
+    
